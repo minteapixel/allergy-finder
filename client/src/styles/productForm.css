@@ -1,0 +1,12 @@
+.productForm {
+  background-color: #f1f1f1;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  .productForm {
+    margin-bottom: 2rem;
+  }
+}

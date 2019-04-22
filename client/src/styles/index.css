@@ -1,0 +1,7 @@
+@import './base.css';
+@import '../../node_modules/bulma/css/bulma.css';
+
+@import './allergyContainer.css';
+@import './button.css';
+@import './footer.css';
+@import './productForm.css';

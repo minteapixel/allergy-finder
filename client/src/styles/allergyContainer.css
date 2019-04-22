@@ -1,0 +1,15 @@
+.allergyContainer { /* default for desktop */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+/* for mobile */
+@media (max-width: 768px) {
+  .allergyContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}

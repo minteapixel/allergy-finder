@@ -1,0 +1,9 @@
+.buttonBox { /* container for multiple buttons */
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.button--margin-left {
+  margin-left: 1rem;
+}
