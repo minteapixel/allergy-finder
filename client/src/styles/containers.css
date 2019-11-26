@@ -6,10 +6,6 @@
   /* content info goes here */
 }
 
-.section {
-  /* section stuff goes here */
-}
-
 .section { /* default for desktop */
   display: flex;
   flex-wrap: wrap;

@@ -2,6 +2,7 @@ import React, { Component }  from 'react';
 import ProductForm from './ProductForm';
 import Buttons from './Buttons';
 import Allergens from './Allergens';
+import Error from './Error';
 import { sanitizeInput, compareProducts, convertToArray } from '../../controllers/allergy-utils.js';
 
 let initialState = {
@@ -25,12 +26,12 @@ class AllergyTool extends Component {
     this.state = initialState;
   }
 
-  // clearing ALL product forms = back to initial state
+  // ===== clearing ALL product forms = back to initial state
   handleClearAll = () => {
     this.setState(() => (initialState));
   }
 
-  // === methods for product forms
+  // ===== methods for product forms
   handleNameChange = (id, e) => {
     const name = sanitizeInput(e.target.value);
     this.setState(prevState => ({
@@ -45,63 +46,73 @@ class AllergyTool extends Component {
     }));
   };
 
-  // === resetting just ONE of the product forms
-  handleResetOne = (e) => {
+  // ====== resetting just ONE of the product forms
+  handleResetOne = (id, e) => {
     e.preventDefault();
-    return alert('you have clicked on product form clear button!');
-    // sanitizeInput(ingredients);
-    // this.setState({
-    //   name: '',
-    //   ingredients: ''
-    // });
+    this.setState(prevState => ({
+      allergens: '',
+      error: '',
+      products: prevState.products.map(el => el._id === id ? { ...el, name: '', ingredients: '' } : el)
+    }));
   };
 
   // === comparing products
   handleCompareProducts = (e) => {
+    e.preventDefault();
     let arr1=convertToArray(this.state.products[0].ingredients);
     let arr2=convertToArray(this.state.products[1].ingredients);
-    e.preventDefault();
-    this.setState(() => ({
-      compareClicked: true,
-      allergens: compareProducts(arr1, arr2)
-    }));
-    return console.log(compareProducts(arr1, arr2));
+    let allergensAnswer = compareProducts(arr1, arr2);
+    if (allergensAnswer.error) {
+      this.setState(() => ({
+        compareClicked: true,
+        allergens: '',
+        error: allergensAnswer.error
+      }));
+    } else {
+      this.setState(() => ({
+        compareClicked: true,
+        allergens: (allergensAnswer.length > 0) ? allergensAnswer : 'None - no matching items.',
+        error: ''
+      }));
+    }
   }
 
   render() {
     return (
-      <section className="section">
-        <div className="allergyContainer">
-          <ProductForm
-            formId={1}
-            compareClicked={this.state.compareClicked}
-            className='productForm productForm--marginRight'
-            onNameChange={this.handleNameChange}
-            onIngredientsChange={this.handleIngredientsChange}
-            onHandleReset={this.handleResetOne}
-            name={this.state.products[0].name}
-            ingredients={this.state.products[0].ingredients}
+      <div>
+        <section className="section">
+          <div className="allergyContainer">
+            <ProductForm
+              formId={1}
+              compareClicked={this.state.compareClicked}
+              className='productForm productForm--marginRight'
+              onNameChange={this.handleNameChange}
+              onIngredientsChange={this.handleIngredientsChange}
+              onHandleReset={this.handleResetOne}
+              name={this.state.products[0].name}
+              ingredients={this.state.products[0].ingredients}
+            />
+            <ProductForm 
+              formId={2}
+              compareClicked={this.state.compareClicked}
+              className='productForm'
+              onNameChange={this.handleNameChange}
+              onIngredientsChange={this.handleIngredientsChange}
+              onHandleReset={this.handleResetOne}
+              name={this.state.products[1].name}
+              ingredients={this.state.products[1].ingredients}
+            />
+          </div>
+          <Buttons 
+            onHandleClearAll={this.handleClearAll}
+            onHandleCompareProducts={this.handleCompareProducts}
           />
-          <ProductForm 
-            formId={2}
-            compareClicked={this.state.compareClicked}
-            className='productForm'
-            onNameChange={this.handleNameChange}
-            onIngredientsChange={this.handleIngredientsChange}
-            onHandleReset={this.handleResetOne}
-            name={this.state.products[1].name}
-            ingredients={this.state.products[1].ingredients}
-          />
-        </div>
-        <Buttons 
-          onHandleClearAll = {this.handleClearAll}
-          onHandleCompareProducts = {this.handleCompareProducts}
-        />
-        <div className="has-text-centered">
-          {this.state.error && <p className="has-text-danger">{this.state.error}</p>}
-          {this.state.allergens &&  <Allergens allergens={this.state.allergens} />}
-        </div>
-      </section>
+        </section>
+        <section className="has-text-centered">
+          {this.state.error && <Error text={this.state.error}/>}
+          {this.state.allergens &&  <Allergens text={this.state.allergens} />}
+        </section>
+      </div>
     );
   }
 }

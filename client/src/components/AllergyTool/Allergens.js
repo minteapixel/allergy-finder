@@ -2,7 +2,7 @@ import React from 'react';
 
 const Allergens = (props) => (
   <div className="">
-    <p><strong>Possible Allergens: </strong>{props.allergens.join(', ')}</p>
+    {(typeof props.text === Array) ? (<p><strong>Possible Allergens: </strong>{props.text.join(', ')}</p>): (<p><strong>Possible Allergens: </strong>{props.text}</p>)}
   </div>
 );
 

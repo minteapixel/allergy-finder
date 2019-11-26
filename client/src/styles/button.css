@@ -4,6 +4,13 @@
   justify-content: center;
 }
 
-.button--margin-left {
-  margin-left: 1rem;
+.button--margin {
+  margin-right: 1rem;
+}
+
+@media (max-width: 767px) {
+  .button--margin {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
 }

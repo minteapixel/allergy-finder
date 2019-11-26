@@ -1,5 +1,4 @@
-// sanitize/validate data & convert string into array of elements
-
+// validate data
 function sanitizeInput(str) {
   if(str.match(/<\/?[a-z][a-z0-9]*>/ig)) {
     return '';
@@ -7,6 +6,7 @@ function sanitizeInput(str) {
   return str;
 }
 
+// sanitize data & convert to array
 function convertToArray(str) {
   return str
     .toLowerCase()
@@ -16,10 +16,13 @@ function convertToArray(str) {
     .sort();
 }
 
-// compare two arrays and return any matching elements
+// compare two arrays and return matching elements
 function compareProducts(arr1, arr2) {
-    const matchedElements = arr1.filter((el => arr2.includes(el))).sort();
-    return (matchedElements[0] == undefined ? false : matchedElements);
+  if (arr1[0]=="" || arr2[0]=="" ) {
+    return { error: 'Please enter valid ingredients.' };
+  }
+  const matchedElements = arr1.filter((el => arr2.includes(el))).sort();
+  return (!matchedElements ? '' : matchedElements);
 }
 
 export { sanitizeInput, convertToArray, compareProducts };

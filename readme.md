@@ -1,14 +1,14 @@
-# Skincare App
-A quick app to help people discover potential allergens in their skincare products.
+# Allergy Finder
+React app that helps find potential allergens by comparing two products.
 
 ## Live Demo
 See the app in action [here](https://google.com/)
 
 ## Built With
-- CSS/HTML (Flexbox & CSS Grid)
-- Javascript
-- React, Redux
-- Regular Expressions (regex)
+- JavaScript
+- React
+- Regex (Regular Expressions)
+- CSS/HTML5
 
 ## License
 MIT

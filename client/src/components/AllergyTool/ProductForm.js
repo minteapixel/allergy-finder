@@ -33,7 +33,7 @@ class ProductForm extends Component {
             </div>
             <div className="buttonBox">
               <button
-                onClick={this.props.onHandleReset}
+                onClick={(e) => this.props.onHandleReset(this.props.formId, e)}
                 className="button">
                   Clear product details
               </button>
