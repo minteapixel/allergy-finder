@@ -1,5 +1,5 @@
 # Skincare App
-This is still a work in progress app.
+A quick app to help people discover potential allergens in their skincare products.
 
 ## Live Demo
 See the app in action [here](https://google.com/)
@@ -8,6 +8,7 @@ See the app in action [here](https://google.com/)
 - CSS/HTML (Flexbox & CSS Grid)
 - Javascript
 - React, Redux
+- Regular Expressions (regex)
 
 ## License
 MIT
