@@ -1,12 +1,12 @@
 # Allergy Finder
-React app that helps find potential allergens by comparing two products.
+Find out what's been irritating your skin! Allergy Finder is a web app that helps users find potential allergens by comparing 2 products (that have previously caused reactions) and displays any common ingredients.
 
 ## Live Demo
 See the app in action [here](https://google.com/)
 
 ## Built With
 - JavaScript
-- React
+- React.js
 - Regex (Regular Expressions)
 - CSS/HTML5
 
