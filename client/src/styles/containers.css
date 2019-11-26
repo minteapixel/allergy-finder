@@ -1,4 +1,16 @@
-.allergyContainer { /* default for desktop */
+.wrapper {
+  /* insert body wrapper here */
+}
+
+.content {
+  /* content info goes here */
+}
+
+.section {
+  /* section stuff goes here */
+}
+
+.section { /* default for desktop */
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -7,7 +19,7 @@
 
 /* for mobile */
 @media (max-width: 768px) {
-  .allergyContainer {
+  .section {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;

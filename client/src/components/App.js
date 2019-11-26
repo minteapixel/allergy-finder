@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Allergy from './AllergyTool/Allergy';
+import AllergyTool from './AllergyTool/AllergyTool';
 import Header from './Header';
 import Footer from './Footer';
 
@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div className="container is-fluid">
         <Header />
-        <Allergy />
+        <AllergyTool />
         <Footer />
       </div>
     );

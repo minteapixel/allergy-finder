@@ -5,8 +5,15 @@
   padding: 1rem;
 }
 
+.productForm--marginRight {
+  margin-right: 2rem;
+}
+
 @media (max-width: 768px) {
   .productForm {
     margin-bottom: 2rem;
+  }
+  .productForm--marginRight {
+    margin-right: 0;
   }
 }

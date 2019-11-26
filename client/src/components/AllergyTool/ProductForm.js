@@ -1,44 +1,39 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-class ProductForm extends React.Component {
-  state = {
-    name: '',
-    ingredients: ''
-  }
+class ProductForm extends Component {
+  handleNameChange = (e) => (this.props.onNameChange(e.target.value));
+
+  handleIngredientsChange = (e) =>
+  (this.props.onIngredientsChange(e.target.value));
   
-  onNameChange = (e) => {
-    const name = e.target.value;
-    this.setState(() => ({ name }));
-  };
-
-  onIngredientsChange = (e) => {
-    const ingredients = e.target.value;
-    this.setState(() => ({ ingredients }));
-  };
-
-  onReset = (e) => {
+  handleReset = (e) => {
     e.preventDefault();
-    this.setState({
-      name: '',
-      ingredients: ''
-    });
+    alert('you have clicked handle reset!');
   };
+
+  // onReset = (e) => {
+  //   e.preventDefault();
+  //   this.setState({
+  //     name: '',
+  //     ingredients: ''
+  //   });
+  // };
 
   render() {
     return(
-      <div className="productForm">
+      <div className={this.props.className}>
         <form onSubmit={this.onSubmit}>
-          <h3 className="title is-3 has-text-centered">Product {this.props.number}</h3>
+          <h3 className="title is-3 has-text-centered">Product {this.props.id}</h3>
             <div>
             <div className="field">
               <label className="label">Name:</label>
               <input
                 className="input"
                 type="text"
-                name={"p-name-" + this.props.number}
+                name="prodName"
                 placeholder="Product Name"
-                value={this.state.name}
-                onChange={this.onNameChange}
+                value={this.props.name}
+                onChange={this.props.onNameChange}
               />
             </div>
 
@@ -46,17 +41,17 @@ class ProductForm extends React.Component {
               <label className="label">Ingredients:</label>
               <textarea
                 className="textarea"
-                name={"p-ingre-" + this.props.number}
+                name="ingredients"
                 placeholder="Product Ingredients"
-                value={this.state.ingredients}
-                onChange={this.onIngredientsChange}
+                value={this.props.ingredients}
+                onChange={this.props.onIngredientsChange}
               />
             </div>
             
             </div>
             <div className="buttonBox">
               <button
-                onClick={this.onReset}
+                onClick={this.handleReset}
                 className="button">
                   Clear product details
               </button>
