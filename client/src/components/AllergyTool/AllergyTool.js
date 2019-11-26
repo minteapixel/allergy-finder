@@ -1,13 +1,22 @@
 import React, { Component }  from 'react';
 import ProductForm from './ProductForm';
 import Buttons from './Buttons';
+import Allergens from './Allergens';
 import { sanitizeInput, compareProducts, convertToArray } from '../../controllers/allergy-utils.js';
 
 let initialState = {
-  allergens: [],
+  allergens: '',
   compareClicked: false,
   error: '',
-  products: []
+  products: [
+    { _id: 1,
+      name: '',
+      ingredients: ''
+    }, {
+    _id: 2,
+    name: '',
+    ingredients: ''
+  }]
 };
 
 class AllergyTool extends Component {
@@ -19,42 +28,44 @@ class AllergyTool extends Component {
   // clearing ALL product forms = back to initial state
   handleClearAll = () => {
     this.setState(() => (initialState));
-    return alert('you clicked the clear everything button');
   }
 
   // === methods for product forms
-  // parameters: id, name, ingredients
-  handleNameChange = (e) => {
-    let name = e.target.value;
-    console.log('product name: ' +  sanitizeInput(name));
-    // this.setState({
-    //   products.id == id ? products.1(replace);
-    // });
+  handleNameChange = (id, e) => {
+    const name = sanitizeInput(e.target.value);
+    this.setState(prevState => ({
+      products: prevState.products.map(el => el._id === id ? { ...el, name } : el)
+    }));
   };
 
-  handleIngredientsChange = (e) => {
-    const ingredients = e.target.value;
-    console.log('ingredients: ' + e.target.value);
+  handleIngredientsChange = (id, e) => {
+    const ingredients = sanitizeInput(e.target.value);
+    this.setState(prevState => ({
+      products: prevState.products.map(el => el._id === id ? { ...el, ingredients } : el)
+    }));
   };
 
   // === resetting just ONE of the product forms
-  handleReset = (e) => {
+  handleResetOne = (e) => {
     e.preventDefault();
+    return alert('you have clicked on product form clear button!');
     // sanitizeInput(ingredients);
-    this.setState({
-      name: '',
-      ingredients: ''
-    });
+    // this.setState({
+    //   name: '',
+    //   ingredients: ''
+    // });
   };
 
+  // === comparing products
   handleCompareProducts = (e) => {
+    let arr1=convertToArray(this.state.products[0].ingredients);
+    let arr2=convertToArray(this.state.products[1].ingredients);
     e.preventDefault();
-    alert('You clicked on the compare button!')
-    ;
     this.setState(() => ({
       compareClicked: true,
-      products: [...this.state.products]
+      allergens: compareProducts(arr1, arr2)
     }));
+    return console.log(compareProducts(arr1, arr2));
   }
 
   render() {
@@ -67,6 +78,9 @@ class AllergyTool extends Component {
             className='productForm productForm--marginRight'
             onNameChange={this.handleNameChange}
             onIngredientsChange={this.handleIngredientsChange}
+            onHandleReset={this.handleResetOne}
+            name={this.state.products[0].name}
+            ingredients={this.state.products[0].ingredients}
           />
           <ProductForm 
             formId={2}
@@ -74,6 +88,9 @@ class AllergyTool extends Component {
             className='productForm'
             onNameChange={this.handleNameChange}
             onIngredientsChange={this.handleIngredientsChange}
+            onHandleReset={this.handleResetOne}
+            name={this.state.products[1].name}
+            ingredients={this.state.products[1].ingredients}
           />
         </div>
         <Buttons 
@@ -81,7 +98,8 @@ class AllergyTool extends Component {
           onHandleCompareProducts = {this.handleCompareProducts}
         />
         <div className="has-text-centered">
-          {this.state.compareClicked && (this.state.error ? <p className="has-text-danger">{this.state.error}</p> : <p>Possible Allergens are: {this.state.allergens}</p>)}
+          {this.state.error && <p className="has-text-danger">{this.state.error}</p>}
+          {this.state.allergens &&  <Allergens allergens={this.state.allergens} />}
         </div>
       </section>
     );
