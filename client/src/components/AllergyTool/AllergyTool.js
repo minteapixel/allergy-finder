@@ -109,8 +109,8 @@ class AllergyTool extends Component {
           />
         </section>
         <section className="has-text-centered">
-          {this.state.error && <Error text={this.state.error}/>}
-          {this.state.allergens &&  <Allergens text={this.state.allergens} />}
+          {this.state.error && <Error text={this.state.error} />}
+          {this.state.allergens && <Allergens text={this.state.allergens.join(", ")} />}
         </section>
       </div>
     );
