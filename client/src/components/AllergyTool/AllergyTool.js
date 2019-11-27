@@ -3,7 +3,7 @@ import ProductForm from './ProductForm';
 import Buttons from './Buttons';
 import Allergens from './Allergens';
 import Error from './Error';
-import { sanitizeInput, compareProducts, convertToArray } from '../../controllers/allergy-utils.js';
+import { validateInput, compareProducts, convertToArray } from '../../controllers/allergy-utils.js';
 
 let initialState = {
   allergens: '',
@@ -33,14 +33,14 @@ class AllergyTool extends Component {
 
   // ===== methods for product forms
   handleNameChange = (id, e) => {
-    const name = sanitizeInput(e.target.value);
+    const name = validateInput(e.target.value);
     this.setState(prevState => ({
       products: prevState.products.map(el => el._id === id ? { ...el, name } : el)
     }));
   };
 
   handleIngredientsChange = (id, e) => {
-    const ingredients = sanitizeInput(e.target.value);
+    const ingredients = validateInput(e.target.value);
     this.setState(prevState => ({
       products: prevState.products.map(el => el._id === id ? { ...el, ingredients } : el)
     }));
@@ -61,17 +61,17 @@ class AllergyTool extends Component {
     e.preventDefault();
     let arr1=convertToArray(this.state.products[0].ingredients);
     let arr2=convertToArray(this.state.products[1].ingredients);
-    let allergensAnswer = compareProducts(arr1, arr2);
-    if (allergensAnswer.error) {
+    let allergensResult = compareProducts(arr1, arr2);
+    if (allergensResult.error) {
       this.setState(() => ({
         compareClicked: true,
         allergens: '',
-        error: allergensAnswer.error
+        error: allergensResult.error
       }));
     } else {
       this.setState(() => ({
         compareClicked: true,
-        allergens: (allergensAnswer.length > 0) ? allergensAnswer : 'None - no matching items.',
+        allergens: allergensResult.message,
         error: ''
       }));
     }
@@ -84,7 +84,6 @@ class AllergyTool extends Component {
           <div className="allergyContainer">
             <ProductForm
               formId={1}
-              compareClicked={this.state.compareClicked}
               className='productForm productForm--marginRight'
               onNameChange={this.handleNameChange}
               onIngredientsChange={this.handleIngredientsChange}
@@ -94,7 +93,6 @@ class AllergyTool extends Component {
             />
             <ProductForm 
               formId={2}
-              compareClicked={this.state.compareClicked}
               className='productForm'
               onNameChange={this.handleNameChange}
               onIngredientsChange={this.handleIngredientsChange}
@@ -110,7 +108,7 @@ class AllergyTool extends Component {
         </section>
         <section className="has-text-centered">
           {this.state.error && <Error text={this.state.error} />}
-          {this.state.allergens && <Allergens text={this.state.allergens.join(", ")} />}
+          {this.state.allergens && <Allergens text={this.state.allergens} />}
         </section>
       </div>
     );
