@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/allergy-finder/static/css/main.a47db4b9.chunk.css",
+    "main.css": "/allergy-finder/static/css/main.d9b828fa.chunk.css",
     "main.js": "/allergy-finder/static/js/main.e925854c.chunk.js",
     "main.js.map": "/allergy-finder/static/js/main.e925854c.chunk.js.map",
     "runtime-main.js": "/allergy-finder/static/js/runtime-main.3feba46a.js",
@@ -9,16 +9,16 @@
     "static/js/2.0382821e.chunk.js": "/allergy-finder/static/js/2.0382821e.chunk.js",
     "static/js/2.0382821e.chunk.js.map": "/allergy-finder/static/js/2.0382821e.chunk.js.map",
     "index.html": "/allergy-finder/index.html",
-    "precache-manifest.215b2e7f90e0267aaf354d99e552ec18.js": "/allergy-finder/precache-manifest.215b2e7f90e0267aaf354d99e552ec18.js",
+    "precache-manifest.1ff1cd04c83c93a978fa07cf2017cd91.js": "/allergy-finder/precache-manifest.1ff1cd04c83c93a978fa07cf2017cd91.js",
     "service-worker.js": "/allergy-finder/service-worker.js",
     "static/css/2.27ec8ed5.chunk.css.map": "/allergy-finder/static/css/2.27ec8ed5.chunk.css.map",
-    "static/css/main.a47db4b9.chunk.css.map": "/allergy-finder/static/css/main.a47db4b9.chunk.css.map"
+    "static/css/main.d9b828fa.chunk.css.map": "/allergy-finder/static/css/main.d9b828fa.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.3feba46a.js",
     "static/css/2.27ec8ed5.chunk.css",
     "static/js/2.0382821e.chunk.js",
-    "static/css/main.a47db4b9.chunk.css",
+    "static/css/main.d9b828fa.chunk.css",
     "static/js/main.e925854c.chunk.js"
   ]
 }
