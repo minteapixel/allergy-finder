@@ -4,6 +4,9 @@ Allergy Finder is a web app that helps users find potential allergens by compari
 ## Live Demo
 Demo at: https://minteapixel.github.io/allergy-finder
 
+<br />
+<img src="https://raw.githubusercontent.com/minteapixel/allergy-finder/master/client/public/screenshot.png" alt="screenshot.png">
+
 ## Built With
 - JavaScript
 - React.js
