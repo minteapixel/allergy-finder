@@ -1,6 +1,5 @@
 @import './base.css';
 @import '../../node_modules/bulma/css/bulma.css';
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,600&display=swap');
 
 @import './allergyContainer.css';
 @import './button.css';
