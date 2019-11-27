@@ -7,7 +7,7 @@ const Footer = () => (
     </div>
     <br /><br />
     <div className="has-text-centered">
-      <p>Developed by <a href="https://github.com/minteapixel/">Eileen L.</a> | <a href="https://github.com/minteapixel/skincare-app">Source Code</a></p>
+      <p>Developed by <a href="https://github.com/minteapixel/">Eileen L.</a> | <a href="https://github.com/minteapixel/allergy-finder">Source Code</a></p>
     </div>
   </footer>
 );
