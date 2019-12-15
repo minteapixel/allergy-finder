@@ -1,16 +1,25 @@
 .wrapper {
-  /* insert body wrapper here */
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0 auto;
 }
 
 .content {
-  /* content info goes here */
+  flex: 1 0 auto;
 }
 
 .section { /* default for desktop */
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  margin: 0 auto;
+}
+
+.section--row {
+  flex-direction: row;
 }
 
 /* for mobile */

@@ -6,9 +6,11 @@ import Footer from './Footer';
 class App extends Component {
   render() {
     return (
-      <div className="container is-fluid">
-        <Header />
-        <AllergyTool />
+      <div className="wrapper">
+        <div className="container is-fluid content">
+          <Header />
+          <AllergyTool />
+        </div>
         <Footer />
       </div>
     );

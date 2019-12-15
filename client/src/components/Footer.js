@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Footer = () => (
-  <footer className="myFooter">
+  <footer className="myFooter footer">
     <div>
       <p><strong>DISCLAIMER: </strong>All content published on the page is <strong><em>not</em></strong> a substitute for medical advice, diagnosis, or treatment. Please refer to a healthcare professional for questions about your medical condition.</p>
     </div>

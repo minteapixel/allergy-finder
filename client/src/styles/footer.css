@@ -3,3 +3,7 @@
   margin-top: 3rem;
   padding: 2rem;
 }
+
+.footer {
+  flex-shrink: 0;
+}

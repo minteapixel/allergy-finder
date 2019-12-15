@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Buttons = (props) => (
-  <div className="section has-text-centered">
+  <div className="section has-text-centered section--row">
     <button
       className="button is-warning button--margin"
       onClick={props.onHandleClearAll}>Clear everything</button>
