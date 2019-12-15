@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/allergy-finder/static/css/main.7d767e88.chunk.css",
-    "main.js": "/allergy-finder/static/js/main.1886f99e.chunk.js",
-    "main.js.map": "/allergy-finder/static/js/main.1886f99e.chunk.js.map",
+    "main.css": "/allergy-finder/static/css/main.2a859e2c.chunk.css",
+    "main.js": "/allergy-finder/static/js/main.0a93e3d9.chunk.js",
+    "main.js.map": "/allergy-finder/static/js/main.0a93e3d9.chunk.js.map",
     "runtime-main.js": "/allergy-finder/static/js/runtime-main.3feba46a.js",
     "runtime-main.js.map": "/allergy-finder/static/js/runtime-main.3feba46a.js.map",
     "static/css/2.27ec8ed5.chunk.css": "/allergy-finder/static/css/2.27ec8ed5.chunk.css",
     "static/js/2.0382821e.chunk.js": "/allergy-finder/static/js/2.0382821e.chunk.js",
     "static/js/2.0382821e.chunk.js.map": "/allergy-finder/static/js/2.0382821e.chunk.js.map",
     "index.html": "/allergy-finder/index.html",
-    "precache-manifest.e3ae13c62950747dc937c6eb19cf3bfc.js": "/allergy-finder/precache-manifest.e3ae13c62950747dc937c6eb19cf3bfc.js",
+    "precache-manifest.f77c178bc833c9d74d7c13bb3f5105d8.js": "/allergy-finder/precache-manifest.f77c178bc833c9d74d7c13bb3f5105d8.js",
     "service-worker.js": "/allergy-finder/service-worker.js",
     "static/css/2.27ec8ed5.chunk.css.map": "/allergy-finder/static/css/2.27ec8ed5.chunk.css.map",
-    "static/css/main.7d767e88.chunk.css.map": "/allergy-finder/static/css/main.7d767e88.chunk.css.map"
+    "static/css/main.2a859e2c.chunk.css.map": "/allergy-finder/static/css/main.2a859e2c.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.3feba46a.js",
     "static/css/2.27ec8ed5.chunk.css",
     "static/js/2.0382821e.chunk.js",
-    "static/css/main.7d767e88.chunk.css",
-    "static/js/main.1886f99e.chunk.js"
+    "static/css/main.2a859e2c.chunk.css",
+    "static/js/main.0a93e3d9.chunk.js"
   ]
 }

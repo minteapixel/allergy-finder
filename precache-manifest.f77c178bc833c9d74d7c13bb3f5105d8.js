@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0b82afebe9d1abc8fbdc2b2f4e84a3e0",
+    "revision": "c1a6489ae1ac993b483fcb3f269b6146",
     "url": "/allergy-finder/index.html"
   },
   {
@@ -8,16 +8,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/allergy-finder/static/css/2.27ec8ed5.chunk.css"
   },
   {
-    "revision": "c8c61978df61f5289701",
-    "url": "/allergy-finder/static/css/main.7d767e88.chunk.css"
+    "revision": "bf871d496cad5696a363",
+    "url": "/allergy-finder/static/css/main.2a859e2c.chunk.css"
   },
   {
     "revision": "30b6e07d79fb8bb5f9e7",
     "url": "/allergy-finder/static/js/2.0382821e.chunk.js"
   },
   {
-    "revision": "c8c61978df61f5289701",
-    "url": "/allergy-finder/static/js/main.1886f99e.chunk.js"
+    "revision": "bf871d496cad5696a363",
+    "url": "/allergy-finder/static/js/main.0a93e3d9.chunk.js"
   },
   {
     "revision": "e369570b9c5bc70edab0",
