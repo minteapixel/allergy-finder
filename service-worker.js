@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/allergy-finder/precache-manifest.f77c178bc833c9d74d7c13bb3f5105d8.js"
+  "/allergy-finder/precache-manifest.86efc61f4119af4d3bde22f648dc01e2.js"
 );
 
 self.addEventListener('message', (event) => {
